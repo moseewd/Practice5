@@ -1,16 +1,16 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Практика_задача_3
+namespace РџСЂР°РєС‚РёРєР°_Р·Р°РґР°С‡Р°_3
 {
 
     class Program
     {
 
-        static int Vvodd(string s, out int n)//Вввод размера массива
+        static int Vvodd(string s, out int n)//Р’РІРІРѕРґ СЂР°Р·РјРµСЂР° РјР°СЃСЃРёРІР°
         {
             bool ok;
             string buf;
@@ -19,11 +19,11 @@ namespace Практика_задача_3
                 Console.Write(s + " = ");
                 buf = Console.ReadLine();
                 ok = int.TryParse(buf, out n);
-                if (!ok) Console.WriteLine("Введите " + s + " заново");
+                if (!ok) Console.WriteLine("Р’РІРµРґРёС‚Рµ " + s + " Р·Р°РЅРѕРІРѕ");
             } while (!ok);
             return n;
         }
-        static void Check(string s, ref int a)// выполнение проверки
+        static void Check(string s, ref int a)// РІС‹РїРѕР»РЅРµРЅРёРµ РїСЂРѕРІРµСЂРєРё
         {
             bool ok = false;
             string buf;
@@ -32,7 +32,7 @@ namespace Практика_задача_3
                 if (a > 0) ok = true;
                 else
                 {
-                    if (!ok) Console.WriteLine("Введите " + s + " заново");
+                    if (!ok) Console.WriteLine("Р’РІРµРґРёС‚Рµ " + s + " Р·Р°РЅРѕРІРѕ");
                     Console.Write(s + " = ");
                     buf = Console.ReadLine();
                     ok = int.TryParse(buf, out a);
@@ -42,13 +42,13 @@ namespace Практика_задача_3
         }
 
 
-        static void AddMas(out int[,] mas2, out int stroka, out int stolb)//формирование двумерного массива
+        static void AddMas(out int[,] mas2, out int stroka, out int stolb)//С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ РґРІСѓРјРµСЂРЅРѕРіРѕ РјР°СЃСЃРёРІР°
         {
             int i, j, k = 20;
             bool p = false;
             Random a = new Random();
 
-            Vvodd("Размерность массива", out stroka);
+            Vvodd("Р Р°Р·РјРµСЂРЅРѕСЃС‚СЊ РјР°СЃСЃРёРІР°", out stroka);
             stolb = stroka;
             mas2 = new int[stroka + k, stolb];
             do
@@ -68,19 +68,19 @@ namespace Практика_задача_3
 
 
         public static int Readint()
-        //ввод числа для красивых лаб
+        //РІРІРѕРґ С‡РёСЃР»Р° РґР»СЏ РєСЂР°СЃРёРІС‹С… Р»Р°Р±
         {
             bool check = false;
             int intNum;
             do
             {
-                // Попытка перевести строку в число
+                // РџРѕРїС‹С‚РєР° РїРµСЂРµРІРµСЃС‚Рё СЃС‚СЂРѕРєСѓ РІ С‡РёСЃР»Рѕ
                 check = Int32.TryParse(Console.ReadLine(), out intNum);
-                // Если попытка неудачная:
+                // Р•СЃР»Рё РїРѕРїС‹С‚РєР° РЅРµСѓРґР°С‡РЅР°СЏ:
                 if (!check)
-                    Console.WriteLine("Некорректный ввод. Попробуйте ещё раз");
+                    Console.WriteLine("РќРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РІРІРѕРґ. РџРѕРїСЂРѕР±СѓР№С‚Рµ РµС‰С‘ СЂР°Р·");
             } while (!check);
-            // Если попытка удачная:
+            // Р•СЃР»Рё РїРѕРїС‹С‚РєР° СѓРґР°С‡РЅР°СЏ:
             return intNum;
         }
         static void Main(string[] args)
@@ -111,7 +111,7 @@ namespace Практика_задача_3
                 }
                 Console.WriteLine();
             }
-            Console.WriteLine("Максимальный элемент исследуемой области={0}", max);
+            Console.WriteLine("РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РёСЃСЃР»РµРґСѓРµРјРѕР№ РѕР±Р»Р°СЃС‚Рё={0}", max);
 
 
 
